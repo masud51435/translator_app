@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
+import 'widgets/custom_field_duo.dart';
 import 'widgets/top_language_section.dart';
 
 class HomePage extends StatelessWidget {
@@ -22,13 +23,13 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+        child: const SingleChildScrollView(
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
           child: Column(
             children: [
               TopLanguageSection(),
               Gap(20),
-              
+              CustomFieldDuo(),
             ],
           ),
         ),
@@ -36,3 +37,4 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
