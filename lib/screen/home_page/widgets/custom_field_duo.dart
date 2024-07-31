@@ -15,8 +15,12 @@ class CustomFieldDuo extends StatelessWidget {
       () => Column(
         children: [
           TextFormField(
-            controller: controller.controller,
+            controller: controller.inputController,
             maxLines: 10,
+            onChanged: (text) {
+              Future.delayed(Duration.zero);
+              controller.translate();
+            },
             onTapOutside: (event) =>
                 FocusManager.instance.primaryFocus?.unfocus(),
             decoration: InputDecoration(
@@ -28,7 +32,7 @@ class CustomFieldDuo extends StatelessWidget {
               ),
               suffix: IconButton(
                 onPressed: () {
-                  controller.controller.clear();
+                  controller.inputController.clear();
                 },
                 icon: Icon(
                   Icons.clear,
@@ -47,6 +51,7 @@ class CustomFieldDuo extends StatelessWidget {
             const Gap(20),
             TextFormField(
               maxLines: null,
+              controller: controller.outPutController.value,
               decoration: InputDecoration(
                 hintText: 'Write your word here...',
                 hintStyle: TextStyle(
