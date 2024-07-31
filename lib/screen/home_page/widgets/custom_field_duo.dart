@@ -18,7 +18,6 @@ class CustomFieldDuo extends StatelessWidget {
             controller: controller.inputController,
             maxLines: 10,
             onChanged: (text) {
-              Future.delayed(Duration.zero);
               controller.translate();
             },
             onTapOutside: (event) =>
@@ -51,7 +50,8 @@ class CustomFieldDuo extends StatelessWidget {
             const Gap(20),
             TextFormField(
               maxLines: null,
-              controller: controller.outPutController.value,
+              controller:
+                  TextEditingController(text: controller.outputText.value),
               decoration: InputDecoration(
                 hintText: 'Write your word here...',
                 hintStyle: TextStyle(

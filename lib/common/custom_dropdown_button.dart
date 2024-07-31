@@ -9,8 +9,8 @@ class CustomDropDownButton extends StatelessWidget {
   });
 
   final String text;
-  final List<DropdownMenuItem<Object?>>? item;
-  final void Function(Object?)? onChange;
+  final List<DropdownMenuItem<String>>? item;
+  final void Function(String?)? onChange;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,8 @@ class CustomDropDownButton extends StatelessWidget {
         color: Colors.grey.shade200,
         borderRadius: BorderRadius.circular(20),
       ),
-      child: DropdownButton<Object?>(
+      child: DropdownButton<String>(
+        isExpanded: true,
         hint: Text(text),
         underline: const SizedBox(),
         style: const TextStyle(
