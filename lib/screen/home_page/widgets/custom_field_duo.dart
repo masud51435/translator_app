@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:translatorapp/controllers/translate_controller.dart';
@@ -60,7 +61,14 @@ class CustomFieldDuo extends StatelessWidget {
                   color: Colors.grey.shade400,
                 ),
                 suffixIcon: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Clipboard.setData(ClipboardData(
+                      text: controller.outputText.value,
+                    )).then((value) {
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                          content: Text('Text copied to clipboard!')));
+                    });
+                  },
                   icon: Icon(
                     Icons.copy,
                     color: Colors.grey.shade500,
