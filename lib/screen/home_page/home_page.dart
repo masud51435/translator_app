@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'widgets/custom_field_duo.dart';
+import 'widgets/header.dart';
 import 'widgets/top_language_section.dart';
 
 class HomePage extends StatelessWidget {
@@ -27,6 +29,8 @@ class HomePage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
           child: Column(
             children: [
+              Header(),
+              SizedBox(height: 30),
               TopLanguageSection(),
               Gap(20),
               CustomFieldDuo(),
@@ -37,4 +41,5 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
 

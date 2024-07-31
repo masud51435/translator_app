@@ -54,7 +54,7 @@ class CustomFieldDuo extends StatelessWidget {
               controller:
                   TextEditingController(text: controller.outputText.value),
               decoration: InputDecoration(
-                hintText: 'Write your word here...',
+                hintText: 'OutPut...',
                 hintStyle: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
@@ -62,12 +62,19 @@ class CustomFieldDuo extends StatelessWidget {
                 ),
                 suffixIcon: IconButton(
                   onPressed: () {
-                    Clipboard.setData(ClipboardData(
-                      text: controller.outputText.value,
-                    )).then((value) {
-                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                          content: Text('Text copied to clipboard!')));
-                    });
+                    Clipboard.setData(
+                      ClipboardData(
+                        text: controller.outputText.value,
+                      ),
+                    ).then(
+                      (value) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text('Text copied to clipboard!'),
+                          ),
+                        );
+                      },
+                    );
                   },
                   icon: Icon(
                     Icons.copy,
