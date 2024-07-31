@@ -8,7 +8,8 @@ class TranslateController extends GetxController {
   final TextEditingController inputController = TextEditingController();
   final RxString outputText = ''.obs;
   RxBool showSecondField = false.obs;
-  final from = 'Auto'.obs, to = 'Bangla'.obs;
+  final RxString from = 'Auto'.obs;
+  final RxString to = 'Bangla'.obs;
   late final language = jsonLang.keys.toList();
 
   @override
